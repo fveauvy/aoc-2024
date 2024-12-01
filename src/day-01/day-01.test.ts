@@ -1,12 +1,21 @@
 import { expect, test } from "bun:test";
-import { solvePart1, solvePart2 } from "./day-01";
+import { parseLocationsRecord, solvePart1, solvePart2 } from "./day-01";
+import { loadInput } from "../utils";
+
+const textFileUrl = new URL(
+	import.meta.url.replace(".test.ts", "-example.txt"),
+);
 
 test("Day 01 - Part 1 Example Input", () => {
+	const input = loadInput(textFileUrl);
+	const locationsRecord = parseLocationsRecord(input);
+
 	const exampleInput = ["example", "data"];
-	expect(solvePart1(exampleInput)).toBe(0); // Replace with expected value
+	expect(solvePart1(locationsRecord)).toBe(11); // Replace with expected value
 });
 
 test("Day 01 - Part 2 Example Input", () => {
-	const exampleInput = ["example", "data"];
-	expect(solvePart2(exampleInput)).toBe(0); // Replace with expected value
+	const input = loadInput(textFileUrl);
+	const locationsRecord = parseLocationsRecord(input);
+	expect(solvePart2(locationsRecord)).toBe(31); // Replace with expected value
 });
