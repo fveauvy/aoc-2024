@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { loadInput } from "../utils";
+import { loadData } from "./data-loader";
 
 type LocationsRecord = {
 	col1: number[];
@@ -23,7 +23,7 @@ export function parseLocationsRecord(input: string): LocationsRecord {
 }
 
 // Load input
-const input = loadInput(textFileUrl);
+const input = loadData(textFileUrl);
 const locationsRecord = parseLocationsRecord(input);
 
 export function solvePart1(data: LocationsRecord): number {
