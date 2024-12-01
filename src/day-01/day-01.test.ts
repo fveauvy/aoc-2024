@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { loadInput } from "../utils";
+import { loadData } from "./data-loader";
 import { parseLocationsRecord, solvePart1, solvePart2 } from "./day-01";
 
 const textFileUrl = new URL(
@@ -7,7 +7,7 @@ const textFileUrl = new URL(
 );
 
 test("Day 01 - Part 1 Example Input", () => {
-	const input = loadInput(textFileUrl);
+	const input = loadData(textFileUrl);
 	const locationsRecord = parseLocationsRecord(input);
 
 	const exampleInput = ["example", "data"];
@@ -15,7 +15,7 @@ test("Day 01 - Part 1 Example Input", () => {
 });
 
 test("Day 01 - Part 2 Example Input", () => {
-	const input = loadInput(textFileUrl);
+	const input = loadData(textFileUrl);
 	const locationsRecord = parseLocationsRecord(input);
 	expect(solvePart2(locationsRecord)).toBe(31); // Replace with expected value
 });

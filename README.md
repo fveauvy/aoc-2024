@@ -24,6 +24,8 @@ This creates the folder `src/day-<number>/` with:
 - `day-<number>.ts`: Solution boilerplate.
 - `day-<number>.test.ts`: Test boilerplate.
 - `day-<number>.txt`: Empty input file.
+- `data-loader.ts`: Data loader for reading and parsing input.
+- `execute-day-<number>.ts`: Script to run the solution.
 
 ### Run a Specific Day
 
@@ -54,7 +56,9 @@ src/
 ├── day-01/
 │   ├── day-01.ts       # Solution
 │   ├── day-01.test.ts  # Tests
-│   └── day-01.txt      # Input
+│   ├── day-01.txt      # Input
+│   ├── data-loader.ts  # Data loader
+│   └── execute-day-01.ts # Execution script
 ├── index.ts            # Main entry point
 └── utils/
     ├── index.ts        # Utility functions
