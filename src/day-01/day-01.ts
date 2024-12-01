@@ -1,5 +1,5 @@
-import { loadInput } from "../utils";
 import { z } from "zod";
+import { loadInput } from "../utils";
 
 type LocationsRecord = {
 	col1: number[];
