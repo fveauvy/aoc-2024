@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test";
-import { parseLocationsRecord, solvePart1, solvePart2 } from "./day-01";
 import { loadInput } from "../utils";
+import { parseLocationsRecord, solvePart1, solvePart2 } from "./day-01";
 
 const textFileUrl = new URL(
 	import.meta.url.replace(".test.ts", "-example.txt"),
