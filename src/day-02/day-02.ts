@@ -82,25 +82,31 @@ export function solvePart2(data: Report[]): number {
 			safeReportCount++;
 			debugLog("This report is safe: %s", report);
 		} else {
-			const reportDampenerApplied = report.toSpliced(status.levelOnError, 1);
-
-			const statusWithDampener = isReportSafe(reportDampenerApplied);
-
-			if (statusWithDampener.safe) {
+			// Check if the report is safe after removing the level that introduces an issue
+			const reportDampenerAppliedNext = report.toSpliced(
+				status.levelOnError,
+				1,
+			);
+			const statusWithDampenerNext = isReportSafe(reportDampenerAppliedNext);
+			if (statusWithDampenerNext.safe) {
 				safeReportCount++;
 				debugLog(
 					"Initially %s - removed index %d - report is now safe: %s",
 					report,
 					status.levelOnError,
-					reportDampenerApplied,
+					reportDampenerAppliedNext,
 				);
 				continue;
 			}
+
+			// Check if the report is safe after removing the previous level
+			// Example: 10 8 7 6 5 3 4 3
+			// An issue raised here  ^
+			// But we need to remove the index 5 to make it safe
 			const reportDampenerAppliedPrev = report.toSpliced(
 				status.levelOnError - 1,
 				1,
 			);
-
 			const statusWithDampenerPrev = isReportSafe(reportDampenerAppliedPrev);
 			if (statusWithDampenerPrev.safe) {
 				safeReportCount++;
@@ -113,6 +119,7 @@ export function solvePart2(data: Report[]): number {
 				continue;
 			}
 
+			// Sometimes we need to remove the first level to make the report safe
 			const reportDampenerAppliedFirst = report.toSpliced(0, 1);
 			const statusWithDampenerFirst = isReportSafe(reportDampenerAppliedFirst);
 			if (statusWithDampenerFirst.safe) {

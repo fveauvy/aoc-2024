@@ -19,5 +19,5 @@ test("Day 02 - Part 2 Example Input", () => {
 	const input = loadInput(textFileUrl);
 	const lines = parseLines(input);
 	const reports = parseReports(lines);
-	expect(solvePart2(reports)).toBe(11); // Replace with expected value
+	expect(solvePart2(reports)).toBe(4); // Replace with expected value
 });
