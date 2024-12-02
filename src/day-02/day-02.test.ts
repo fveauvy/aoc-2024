@@ -1,16 +1,20 @@
 import { expect, test } from "bun:test";
-import { solvePart1, solvePart2 } from "./day-02";
+import { loadInput, parseLines } from "../utils";
+import { parseReports, solvePart1, solvePart2 } from "./day-02";
 
 const textFileUrl = new URL(
-	import.meta.url.replace(".test.ts", "-example.txt"),
+	import.meta.url.replace(".test.ts", ".example.txt"),
 );
 
 test("Day 02 - Part 1 Example Input", () => {
+	// Load input
 	const input = loadInput(textFileUrl);
-	expect(solvePart1(input)).toBe(0); // Replace with expected value
+	const lines = parseLines(input);
+	const reports = parseReports(lines);
+	expect(solvePart1(reports)).toBe(2); // Replace with expected value
 });
 
-test("Day 02 - Part 2 Example Input", () => {
-	const input = loadInput(textFileUrl);
-	expect(solvePart2(input)).toBe(0); // Replace with expected value
-});
+// test("Day 02 - Part 2 Example Input", () => {
+// 	const input = loadInput(textFileUrl);
+// 	expect(solvePart2(input)).toBe(0); // Replace with expected value
+// });
