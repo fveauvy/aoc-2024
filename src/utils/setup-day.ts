@@ -57,9 +57,10 @@ writeFileSync(
 	testFile,
 	`import { expect, test } from "bun:test";
 import { solvePart1, solvePart2 } from "./day-${day}";
+import { loadInput } from "../utils";
 
 const textFileUrl = new URL(
-	import.meta.url.replace(".test.ts", "-example.txt"),
+	import.meta.url.replace(".test.ts", ".example.txt"),
 );
 
 
