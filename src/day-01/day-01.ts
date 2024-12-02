@@ -38,7 +38,7 @@ export function solvePart1(data: LocationsRecord): number {
 		totalDistance += Math.abs(sortedList1[i] - sortedList2[i]);
 	}
 
-	console.log("Total distance is: %d", totalDistance);
+	console.log("Total distance is: ", totalDistance);
 	return totalDistance;
 }
 
@@ -63,7 +63,7 @@ export function solvePart2(data: LocationsRecord): number {
 		}
 	}
 
-	console.log("Similarity score is: %d", similarityScore);
+	console.log("Similarity score is: ", similarityScore);
 	return similarityScore;
 }
 
