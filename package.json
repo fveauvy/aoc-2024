@@ -10,7 +10,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"lefthook": "^1.8.5"
 	},
 	"peerDependencies": {
 		"typescript": "^5.7.2"
