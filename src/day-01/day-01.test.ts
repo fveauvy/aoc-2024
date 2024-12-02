@@ -6,16 +6,26 @@ const textFileUrl = new URL(
 	import.meta.url.replace(".test.ts", "-example.txt"),
 );
 
-test("Day 01 - Part 1 Example Input", () => {
+test("Day 01 - Part 1", () => {
+	// Load input
 	const input = loadInput(textFileUrl);
 	const locationsRecord = parseLocationsRecord(input);
 
-	const exampleInput = ["example", "data"];
-	expect(solvePart1(locationsRecord)).toBe(11); // Replace with expected value
+	// Expected Value
+	const expectedValue = 11;
+
+	// Evaluation
+	expect(solvePart1(locationsRecord)).toBe(expectedValue);
 });
 
-test("Day 01 - Part 2 Example Input", () => {
+test("Day 01 - Part 2", () => {
+	// Load input
 	const input = loadInput(textFileUrl);
 	const locationsRecord = parseLocationsRecord(input);
-	expect(solvePart2(locationsRecord)).toBe(31); // Replace with expected value
+
+	// Expected Value
+	const expectedValue = 31;
+
+	// Evaluation
+	expect(solvePart2(locationsRecord)).toBe(expectedValue);
 });

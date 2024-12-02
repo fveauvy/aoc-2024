@@ -56,8 +56,8 @@ const input = loadInput(textFileUrl);
 const lines = parseLines(input);
 const reports = parseReports(lines);
 
+// Implement Part 1 logic
 export function solvePart1(data: Report[]): number {
-	// Implement Part 1 logic
 	let safeReportCount = 0;
 
 	for (const report of data) {
@@ -72,8 +72,8 @@ export function solvePart1(data: Report[]): number {
 	return safeReportCount;
 }
 
+// Implement Part 2 logic
 export function solvePart2(data: Report[]): number {
-	// Implement Part 2 logic
 	let safeReportCount = 0;
 
 	for (const report of data) {

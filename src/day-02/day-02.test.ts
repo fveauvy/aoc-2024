@@ -6,18 +6,28 @@ const textFileUrl = new URL(
 	import.meta.url.replace(".test.ts", ".example.txt"),
 );
 
-test("Day 02 - Part 1 Example Input", () => {
+test("Day 02 - Part 1", () => {
 	// Load input
 	const input = loadInput(textFileUrl);
 	const lines = parseLines(input);
 	const reports = parseReports(lines);
-	expect(solvePart1(reports)).toBe(2); // Replace with expected value
+
+	// Expected Value
+	const expectedValue = 2;
+
+	// Evaluation
+	expect(solvePart1(reports)).toBe(expectedValue);
 });
 
-test("Day 02 - Part 2 Example Input", () => {
+test("Day 02 - Part 2", () => {
 	// Load input
 	const input = loadInput(textFileUrl);
 	const lines = parseLines(input);
 	const reports = parseReports(lines);
-	expect(solvePart2(reports)).toBe(4); // Replace with expected value
+
+	// Expected Value
+	const expectedValue = 4;
+
+	// Evaluation
+	expect(solvePart2(reports)).toBe(expectedValue);
 });

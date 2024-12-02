@@ -26,6 +26,7 @@ export function parseLocationsRecord(input: string): LocationsRecord {
 const input = loadInput(textFileUrl);
 const locationsRecord = parseLocationsRecord(input);
 
+// Implement Part 1 logic
 export function solvePart1(data: LocationsRecord): number {
 	let totalDistance = 0;
 
@@ -42,6 +43,7 @@ export function solvePart1(data: LocationsRecord): number {
 	return totalDistance;
 }
 
+// Implement Part 2 logic
 export function solvePart2(data: LocationsRecord): number {
 	let similarityScore = 0;
 
