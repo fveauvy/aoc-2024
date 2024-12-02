@@ -13,6 +13,7 @@ const dayDir = join("src", `day-${day}`);
 const dayFile = join(dayDir, `day-${day}.ts`);
 const testFile = join(dayDir, `day-${day}.test.ts`);
 const inputFile = join(dayDir, `day-${day}.txt`);
+const exampleInputFile = join(dayDir, `day-${day}.example.txt`);
 
 if (existsSync(dayDir)) {
 	console.error(`Day ${day} directory already exists.`);
@@ -32,11 +33,17 @@ const input = loadInput(textFileUrl);
 const lines = parseLines(input);
 
 export function solvePart1(data: string[]): number {
-  return 0; // Implement Part 1 logic
+  // Implement Part 1 logic
+  const result = 0;
+  console.log("Result:", result);
+  return result; 
 }
 
 export function solvePart2(data: string[]): number {
-  return 0; // Implement Part 2 logic
+  // Implement Part 2 logic
+  const result = 0;
+  console.log("Result:", result);
+  return result; 
 }
 
 if (import.meta.main) {
@@ -51,18 +58,24 @@ writeFileSync(
 	`import { expect, test } from "bun:test";
 import { solvePart1, solvePart2 } from "./day-${day}";
 
+const textFileUrl = new URL(
+	import.meta.url.replace(".test.ts", "-example.txt"),
+);
+
+
 test("Day ${day} - Part 1 Example Input", () => {
-  const exampleInput = ["example", "data"];
-  expect(solvePart1(exampleInput)).toBe(0); // Replace with expected value
+	const input = loadInput(textFileUrl);
+  expect(solvePart1(input)).toBe(0); // Replace with expected value
 });
 
 test("Day ${day} - Part 2 Example Input", () => {
-  const exampleInput = ["example", "data"];
-  expect(solvePart2(exampleInput)).toBe(0); // Replace with expected value
+	const input = loadInput(textFileUrl);
+  expect(solvePart2(input)).toBe(0); // Replace with expected value
 });
 `,
 );
 
 writeFileSync(inputFile, "");
+writeFileSync(exampleInputFile, "");
 
 console.log(`Day ${day} files created successfully in ${dayDir}.`);
