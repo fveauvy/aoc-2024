@@ -8,3 +8,9 @@ export function loadInput(textfileurl: URL) {
 export function parseLines(input: string): string[] {
 	return input.split("\n").map((line) => line.trim());
 }
+
+export function debugLog(message: string, ...data: unknown[]): void {
+	if (process.env.DEBUG === "1") {
+		console.log(message, ...data);
+	}
+}
