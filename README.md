@@ -16,27 +16,26 @@ This repository is a streamlined setup for solving the [Advent of Code](https://
 To generate files for a new puzzle day:
 
 ```bash
-bun setup-day <number>
+bun setup-day <num>
 ```
 
 This creates the folder `src/day-<number>/` with:
 
-- `day-<number>.ts`: Solution boilerplate.
-- `day-<number>.test.ts`: Test boilerplate.
-- `day-<number>.example.txt`: File for the example input.
-- `day-<number>.txt`: File for the puzzle input.
+- `day-<num>.ts`: Solution boilerplate.
+- `day-<num>.test.ts`: Test boilerplate.
+- `day-<num>.example.txt`: File for the example input.
+- `day-<num>.txt`: File for the puzzle input.
 
 > [!TIP]
-> Once you have generated the files, you'll need to paste the puzzle input into the `day-<number>.txt` file, and the example input into the `day-<number>.example.txt` file.
->
-> Don't forget to update the `day-<number>.test.ts` file with the expected results for the example and puzzle inputs as well.
+> Once you have generated the files, you'll need to paste the puzzle input into the `day-<num>.txt` file, and the example input into the `day-<num>.example.txt` file.
+> Don't forget to update the `day-<num>.test.ts` file with both expected results from the example.
 
 ### Run a Specific Day
 
 Execute the solution for a specific day:
 
 ```bash
-bun start <day-number>
+bun start <day-num>
 ```
 
 ### Run Tests
@@ -50,7 +49,7 @@ bun test
 Run a specific test:
 
 ```sh
-bun test <day-number>
+bun test <day-num>
 ```
 
 ### File Structure
