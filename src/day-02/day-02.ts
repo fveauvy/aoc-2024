@@ -2,7 +2,7 @@ import { z } from "zod";
 import { debugLog, loadInput, parseLines } from "../utils";
 
 type Report = number[];
-const textFileUrl = new URL(import.meta.url.replace(".ts", ".txt"));
+const textFileUrl = new URL(import.meta.url.replace(".ts", ".input.txt"));
 
 export function parseReports(lines: string[]): Report[] {
 	return lines.map((line) =>

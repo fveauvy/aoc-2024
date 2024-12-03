@@ -5,7 +5,7 @@ type LocationsRecord = {
 	col1: number[];
 	col2: number[];
 };
-const textFileUrl = new URL(import.meta.url.replace(".ts", ".txt"));
+const textFileUrl = new URL(import.meta.url.replace(".ts", ".input.txt"));
 
 export function parseLocationsRecord(input: string): LocationsRecord {
 	return input.split("\n").reduce(

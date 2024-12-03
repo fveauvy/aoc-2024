@@ -12,7 +12,7 @@ const day = dayArg.padStart(2, "0");
 const dayDir = join("src", `day-${day}`);
 const dayFile = join(dayDir, `day-${day}.ts`);
 const testFile = join(dayDir, `day-${day}.test.ts`);
-const inputFile = join(dayDir, `day-${day}.txt`);
+const inputFile = join(dayDir, `day-${day}.input.txt`);
 const exampleInputFile = join(dayDir, `day-${day}.example.txt`);
 
 if (existsSync(dayDir)) {
@@ -26,7 +26,7 @@ writeFileSync(
 	dayFile,
 	`import { loadInput, parseLines } from "../utils";
 
-const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".txt"));
+const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".input.txt"));
 
 export function loadAndParse(textFileUrl: URL): string[] {
 	const input = loadInput(textFileUrl);

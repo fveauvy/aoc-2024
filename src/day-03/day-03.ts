@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { debugLog, loadInput } from "../utils";
 
-const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".txt"));
+const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".input.txt"));
 
 export function loadAndParse(textFileUrl: URL): string {
 	const input = loadInput(textFileUrl);
