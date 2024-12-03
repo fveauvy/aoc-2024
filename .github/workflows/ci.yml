@@ -21,10 +21,13 @@ jobs:
         run: bun install
 
       - name: Lint Code
-        run: bun run lint
+        run: bun lint
 
       - name: Format Code
-        run: bun run format
+        run: bun format
+
+      - name: Typechecking
+        run: bun typecheck
 
       - name: Run Tests
         run: bun test
