@@ -7,7 +7,7 @@ const TEXT_FILE_URL_EXAMPLE = new URL(
 
 test("Day 03 - Part 1", () => {
 	// Expected Value
-	const expectedValue = 0;
+	const expectedValue = 161;
 
 	// Evaluation
 	expect(solvePart1(TEXT_FILE_URL_EXAMPLE)).toBe(expectedValue);
@@ -15,7 +15,7 @@ test("Day 03 - Part 1", () => {
 
 test("Day 03 - Part 2", () => {
 	// Expected Value
-	const expectedValue = 0;
+	const expectedValue = 48;
 
 	// Evaluation
 	expect(solvePart2(TEXT_FILE_URL_EXAMPLE)).toBe(expectedValue);
