@@ -74,5 +74,7 @@ export function solvePart2(textFileUrl: URL): number {
 	return similarityScore;
 }
 
-solvePart1(TEXT_FILE_URL);
-solvePart2(TEXT_FILE_URL);
+if (import.meta.main) {
+	solvePart1(TEXT_FILE_URL);
+	solvePart2(TEXT_FILE_URL);
+}
