@@ -15,7 +15,7 @@ test("Day 04 - Part 1", () => {
 
 test("Day 04 - Part 2", () => {
 	// Expected Value
-	const expectedValue = 0;
+	const expectedValue = 9;
 
 	// Evaluation
 	expect(solvePart2(TEXT_FILE_URL_EXAMPLE)).toBe(expectedValue);
