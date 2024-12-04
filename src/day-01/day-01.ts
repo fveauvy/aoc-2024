@@ -1,11 +1,18 @@
 import { z } from "zod";
 import { loadInput } from "../utils";
 
+const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".input.txt"));
+
 type LocationsRecord = {
 	col1: number[];
 	col2: number[];
 };
-const textFileUrl = new URL(import.meta.url.replace(".ts", ".input.txt"));
+
+export function loadAndParse(textFileUrl: URL): LocationsRecord {
+	const input = loadInput(textFileUrl);
+	const locationsRecord = parseLocationsRecord(input);
+	return locationsRecord;
+}
 
 export function parseLocationsRecord(input: string): LocationsRecord {
 	return input.split("\n").reduce(
@@ -22,12 +29,9 @@ export function parseLocationsRecord(input: string): LocationsRecord {
 	);
 }
 
-// Load input
-const input = loadInput(textFileUrl);
-const locationsRecord = parseLocationsRecord(input);
-
 // Implement Part 1 logic
-export function solvePart1(data: LocationsRecord): number {
+export function solvePart1(textFileUrl: URL): number {
+	const data = loadAndParse(textFileUrl);
 	let totalDistance = 0;
 
 	// Sort both records
@@ -44,7 +48,8 @@ export function solvePart1(data: LocationsRecord): number {
 }
 
 // Implement Part 2 logic
-export function solvePart2(data: LocationsRecord): number {
+export function solvePart2(textFileUrl: URL): number {
+	const data = loadAndParse(textFileUrl);
 	let similarityScore = 0;
 
 	const locationMap2 = new Map<number, number>();
@@ -69,5 +74,5 @@ export function solvePart2(data: LocationsRecord): number {
 	return similarityScore;
 }
 
-solvePart1(locationsRecord);
-solvePart2(locationsRecord);
+solvePart1(TEXT_FILE_URL);
+solvePart2(TEXT_FILE_URL);

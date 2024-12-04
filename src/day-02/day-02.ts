@@ -1,8 +1,16 @@
 import { z } from "zod";
 import { debugLog, loadInput, parseLines } from "../utils";
 
+const TEXT_FILE_URL = new URL(import.meta.url.replace(".ts", ".input.txt"));
+
 type Report = number[];
-const textFileUrl = new URL(import.meta.url.replace(".ts", ".input.txt"));
+
+export function loadAndParse(textFileUrl: URL): Report[] {
+	const input = loadInput(textFileUrl);
+	const lines = parseLines(input);
+	const reports = parseReports(lines);
+	return reports;
+}
 
 export function parseReports(lines: string[]): Report[] {
 	return lines.map((line) =>
@@ -51,13 +59,10 @@ function isReportSafe(report: Report): ReportStatus {
 	);
 }
 
-// Load input
-const input = loadInput(textFileUrl);
-const lines = parseLines(input);
-const reports = parseReports(lines);
-
 // Implement Part 1 logic
-export function solvePart1(data: Report[]): number {
+export function solvePart1(textFileUrl: URL): number {
+	const data = loadAndParse(textFileUrl);
+
 	let safeReportCount = 0;
 
 	for (const report of data) {
@@ -73,7 +78,8 @@ export function solvePart1(data: Report[]): number {
 }
 
 // Implement Part 2 logic
-export function solvePart2(data: Report[]): number {
+export function solvePart2(textFileUrl: URL): number {
+	const data = loadAndParse(textFileUrl);
 	let safeReportCount = 0;
 
 	for (const report of data) {
@@ -143,6 +149,6 @@ export function solvePart2(data: Report[]): number {
 }
 
 if (import.meta.main) {
-	solvePart1(reports);
-	solvePart2(reports);
+	solvePart1(TEXT_FILE_URL);
+	solvePart2(TEXT_FILE_URL);
 }
