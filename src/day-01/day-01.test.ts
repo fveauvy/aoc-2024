@@ -3,7 +3,7 @@ import { loadInput } from "../utils";
 import { parseLocationsRecord, solvePart1, solvePart2 } from "./day-01";
 
 const textFileUrl = new URL(
-	import.meta.url.replace(".test.ts", "-example.txt"),
+	import.meta.url.replace(".test.ts", ".example.txt"),
 );
 
 test("Day 01 - Part 1", () => {
