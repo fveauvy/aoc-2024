@@ -13,8 +13,8 @@ export function parseGrid(lines: string[]): string[][] {
 	return lines.map((line) => Array.from(line));
 }
 
-export function debugLog(message: string, ...data: unknown[]): void {
+export function debugLog(...data: unknown[]): void {
 	if (process.env.DEBUG === "1") {
-		console.log(message, ...data);
+		console.log(...data);
 	}
 }
